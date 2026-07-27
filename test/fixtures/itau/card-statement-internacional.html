@@ -1,0 +1,62 @@
+<!--
+  "Estado de cuenta internacional" — a view the scraper does NOT support.
+
+  "Monto Origen" writes decimals with a dot ("23.80"), and parseChileanAmount
+  strips dots as thousand separators, so reading this column would record 2380
+  instead of 23.80. Every extractor must decline this page: the billed resolver
+  requires "Valor cuota" or "Monto Operación", neither of which exists here, and
+  there is no generic "monto" fallback for exactly this reason.
+-->
+<div class="modulo-header" id="divPeriodos" name="divPeriodos">
+  <input name="resultShow" type="text" id="resultShow" readonly value="04 / 2026">
+  <div id="boxMonthYear">
+    <div id="calendarIcon"></div>
+    <div id="containerYear">
+      <div id="pre"></div>
+      <div id="currentYear">2026</div>
+      <div id="next"></div>
+    </div>
+    <div id="containerMonth">
+      <div id="m1">Ene</div>
+      <div id="m2">Feb</div>
+      <div id="m3">Mar</div>
+      <div id="m4" class="selectedMonth">Abr</div>
+      <div id="m5" class="disableMonth">May</div>
+      <div id="m6" class="disableMonth">Jun</div>
+    </div>
+  </div>
+</div>
+
+<table class="table table-movimientos">
+  <thead>
+    <tr>
+      <th>N° referencia internacional</th>
+      <th>Fecha operación</th>
+      <th>Descripción operación o cobro</th>
+      <th>Ciudad</th>
+      <th>País</th>
+      <th>Monto Origen</th>
+      <th>Monto USD</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>XXXX-XXXX-XXXX-0000</td>
+      <td>04/02/2026</td>
+      <td>Servicio online 000</td>
+      <td>CIUDAD</td>
+      <td>US</td>
+      <td>23.80</td>
+      <td>23,80</td>
+    </tr>
+    <tr>
+      <td>XXXX-XXXX-XXXX-0000</td>
+      <td>07/04/2026</td>
+      <td>Traspaso Deuda Internac 00</td>
+      <td>IONAL</td>
+      <td>CL</td>
+      <td>0.00</td>
+      <td>-68,78</td>
+    </tr>
+  </tbody>
+</table>

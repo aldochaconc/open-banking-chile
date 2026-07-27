@@ -1,0 +1,144 @@
+<!--
+  "Estado de cuenta nacional". Eight columns. The charge for this period is
+  "Valor cuota"; "Monto Operación" is the whole purchase. Every instalment row here
+  satisfies Valor cuota = Monto Operación / N, so a mapper reading the purchase
+  column produces amounts that no longer sum to the statement total.
+
+  Charges print positive and credits negative ("Monto cancelado").
+  Sum of Valor cuota excluding the payment: 262.000, which is the statement total
+  in card-resumen.html. Including it: 212.000.
+-->
+<div class="modulo-header" id="divPeriodos" name="divPeriodos">
+  <div class="modulo-fecha2">
+    <form id="formularioSelect" name="formularioSelect" method="post" role="form">
+      <div class="filtro-calendario mes-anios">
+        <label id="labelFiltro">Mes / año :</label>
+        <input name="resultShow" type="text" id="resultShow" readonly value="06 / 2026">
+        <div id="boxMonthYear">
+          <div id="calendarIcon"></div>
+          <div id="containerMonthYear">
+            <div id="containerYear">
+              <div id="pre"></div>
+              <div id="currentYear">2026</div>
+              <div id="next"></div>
+            </div>
+            <div id="containerMonth">
+              <div id="m1">Ene</div>
+              <div id="m2">Feb</div>
+              <div id="m3">Mar</div>
+              <div id="m4">Abr</div>
+              <div id="m5">May</div>
+              <div id="m6" class="selectedMonth">Jun</div>
+              <div id="m7" class="disableMonth">Jul</div>
+              <div id="m8" class="disableMonth">Ago</div>
+              <div id="m9" class="disableMonth">Sep</div>
+              <div id="m10" class="disableMonth">Oct</div>
+              <div id="m11" class="disableMonth">Nov</div>
+              <div id="m12" class="disableMonth">Dic</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <input name="btn_hidden_cal" id="btn_hidden_cal" style="display:none" value=" " type="button">
+    </form>
+  </div>
+</div>
+
+<!-- Summary tables that precede the movements. Their cells hold dates too, so an
+     unanchored date test would pull them in as movements. -->
+<table class="table table-compressed">
+  <thead>
+    <tr><th>Desde</th><th>Hasta</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="bold">Período facturado</td>
+      <td><span name="fld_15_iso8601">27/05/2026</span></td>
+      <td><span name="pfFechaFacturacion_iso8601">24/06/2026</span></td>
+    </tr>
+  </tbody>
+</table>
+<table class="table">
+  <thead>
+    <tr><th>Comprobante de Pago</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Pagar hasta<br><span name="comprobantePagarHasta_iso8601">07/07/2026</span></td>
+      <td>Monto total facturado a pagar<br><span name="comprobanteMontoFacturado_iso8601">$ 262.000</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table table-movimientos">
+  <thead>
+    <tr>
+      <th>Lugar de operación</th>
+      <th>Fecha operación</th>
+      <th>Código referencia</th>
+      <th>Descripción operación o cobro</th>
+      <th>Monto Operación</th>
+      <th>Monto total a pagar</th>
+      <th>N° cuota</th>
+      <th>Valor cuota</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Santiago</td>
+      <td>14/06/2026</td>
+      <td>1000000000000001</td>
+      <td>Comercio uno santiago</td>
+      <td>$ 12.000</td>
+      <td>$ 12.000</td>
+      <td>01/1</td>
+      <td>$ 12.000</td>
+    </tr>
+    <tr>
+      <td>Santiago</td>
+      <td>21/06/2026</td>
+      <td>1000000000000002</td>
+      <td>Comercio dos santiago</td>
+      <td>$ 30.000</td>
+      <td>$ 30.000</td>
+      <td>01/1</td>
+      <td>$ 30.000</td>
+    </tr>
+    <!-- Payment of the previous statement: a credit. -->
+    <tr>
+      <td></td>
+      <td>01/06/2026</td>
+      <td>1000000000000003</td>
+      <td>Monto cancelado</td>
+      <td>$ -50.000</td>
+      <td>$ -50.000</td>
+      <td>01/1</td>
+      <td>$ -50.000</td>
+    </tr>
+    <!-- 360.000 / 3 = 120.000 -->
+    <tr>
+      <td>Santiago</td>
+      <td>24/03/2026</td>
+      <td>1000000000000004</td>
+      <td>Comercio tres tasa int. 0,00%</td>
+      <td>$ 360.000</td>
+      <td>$ 360.000</td>
+      <td>02/3</td>
+      <td>$ 120.000</td>
+    </tr>
+    <!-- 1.200.000 / 12 = 100.000 -->
+    <tr>
+      <td>Santiago</td>
+      <td>09/04/2026</td>
+      <td>1000000000000005</td>
+      <td>Comercio cuatro tasa int. 0,00%</td>
+      <td>$ 1.200.000</td>
+      <td>$ 1.200.000</td>
+      <td>03/12</td>
+      <td>$ 100.000</td>
+    </tr>
+    <tr>
+      <td colspan="8">Subtotal operaciones</td>
+    </tr>
+  </tbody>
+</table>

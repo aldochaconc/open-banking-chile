@@ -1,0 +1,98 @@
+<!--
+  "Cartola histórica". Six columns in a different order than the last-movements
+  view, and both amount columns are always filled ("$ 0" instead of empty), so the
+  abono decides the sign. Carries the same Dojo period picker as the statement.
+-->
+<div class="modulo-header" id="divPeriodos" name="divPeriodos">
+  <span name="filtroPeriodos" id="filtroPeriodos">
+    <div class="modulo-fecha2">
+      <form id="formularioSelect" name="formularioSelect" method="post" role="form">
+        <div class="filtro-calendario mes-anios">
+          <label id="labelFiltro">Mes / año :</label>
+          <div class="dijit dijitTextBox dijitTextBoxReadOnly" id="widget_resultShow" widgetid="resultShow">
+            <div class="dijitReset dijitInputField dijitInputContainer">
+              <input class="dijitReset dijitInputInner" name="resultShow" type="text" id="resultShow" readonly value="04 / 2026">
+            </div>
+          </div>
+          <div id="boxMonthYear">
+            <div id="calendarIcon"></div>
+            <div id="containerMonthYear">
+              <div id="containerYear">
+                <span id="arrow"></span>
+                <div id="pre"></div>
+                <div id="currentYear">2026</div>
+                <div id="next"></div>
+              </div>
+              <div id="containerMonth">
+                <div id="m1">Ene</div>
+                <div id="m2">Feb</div>
+                <div id="m3">Mar</div>
+                <div id="m4" class="selectedMonth">Abr</div>
+                <div id="m5">May</div>
+                <div id="m6">Jun</div>
+                <div id="m7" class="disableMonth">Jul</div>
+                <div id="m8" class="disableMonth">Ago</div>
+                <div id="m9" class="disableMonth">Sep</div>
+                <div id="m10" class="disableMonth">Oct</div>
+                <div id="m11" class="disableMonth">Nov</div>
+                <div id="m12" class="disableMonth">Dic</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <span name="Mes" id="Mes" type="hidden"></span>
+        <span name="Anio" id="Anio" type="hidden"></span>
+        <input name="btn_hidden_cal" id="btn_hidden_cal" style="display:none" value=" " type="button">
+      </form>
+    </div>
+  </span>
+</div>
+
+<table class="table table-compressed">
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Nº Operación</th>
+      <th>Movimientos</th>
+      <th>Cargos</th>
+      <th>Abonos</th>
+      <th>Saldo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>01/04/2026</td>
+      <td>000000000</td>
+      <td>Comercio uno santiago </td>
+      <td>$ 20.000</td>
+      <td>$ 0</td>
+      <td>$ -20.000</td>
+    </tr>
+    <tr>
+      <td>01/04/2026</td>
+      <td>000000000</td>
+      <td>Abono Desde Linea De Credito</td>
+      <td>$ 0</td>
+      <td>$ 20.000</td>
+      <td>$ 0</td>
+    </tr>
+    <tr>
+      <td>02/04/2026</td>
+      <td>100000001</td>
+      <td>Transferencia Recibida </td>
+      <td>$ 0</td>
+      <td>$ 500.000</td>
+      <td>$ 500.000</td>
+    </tr>
+    <tr>
+      <td>02/04/2026</td>
+      <td>000000000</td>
+      <td>Comercio dos santiago </td>
+      <td>$ 5.000</td>
+      <td>$ 0</td>
+      <td>$ 495.000</td>
+    </tr>
+  </tbody>
+</table>
+<p>Página 1 de 3</p>
+<a name="nextbtn" href="#">Siguiente</a>

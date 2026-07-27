@@ -1,0 +1,64 @@
+<!--
+  "Saldos y últimos movimientos". Seven columns: the portal added "Observa Vale"
+  and "Montos" to the layout the scraper originally assumed, which is why columns
+  are resolved by header. Balance runs 0 → negative → 0 because a credit line
+  covers each purchase.
+-->
+<div class="modulo-content">
+  <table class="table table-movimientos">
+    <thead>
+      <tr>
+        <th>Fecha</th>
+        <th>Movimientos</th>
+        <th>Observa Vale</th>
+        <th>Cargos</th>
+        <th>Abonos</th>
+        <th>Saldo</th>
+        <th>Montos</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>27/07/2026</td>
+        <td>Abono desde linea de credito</td>
+        <td>Abono Desde Linea De Credito</td>
+        <td></td>
+        <td>$ 3.000</td>
+        <td>$ 0</td>
+        <td>$ 3.000</td>
+      </tr>
+      <tr>
+        <td>27/07/2026</td>
+        <td>Comercio uno</td>
+        <td>Comercio Uno</td>
+        <td>$ 3.000</td>
+        <td></td>
+        <td>$ -3.000</td>
+        <td>$ 3.000</td>
+      </tr>
+      <tr>
+        <td>26/07/2026</td>
+        <td>Transferencia recibida</td>
+        <td>Transferencia Recibida</td>
+        <td></td>
+        <td>$ 250.000</td>
+        <td>$ 250.000</td>
+        <td>$ 250.000</td>
+      </tr>
+      <tr>
+        <td>26/07/2026</td>
+        <td>Comercio dos</td>
+        <td>Comercio Dos</td>
+        <td>$ 7.500</td>
+        <td></td>
+        <td>$ 242.500</td>
+        <td>$ 7.500</td>
+      </tr>
+      <!-- Summary row: no date, must not become a movement. -->
+      <tr>
+        <td colspan="7">Total movimientos del periodo</td>
+      </tr>
+    </tbody>
+  </table>
+  <a name="nextbtn" href="#">Siguiente</a>
+</div>

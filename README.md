@@ -118,6 +118,8 @@ EDWARDS_PASS=tu_clave
 # Itaú
 ITAU_RUT=12345678-9
 ITAU_PASS=tu_clave
+## Opcional: periodos históricos adicionales (cartola y estados de cuenta de TC), máximo 12
+ITAU_MONTHS=3
 
 # Banco Estado
 BESTADO_RUT=12345678-9

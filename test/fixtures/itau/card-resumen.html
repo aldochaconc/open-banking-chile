@@ -1,0 +1,81 @@
+<!--
+  "Resumen tarjeta de crédito". Every figure carries a name= binding, which is what
+  the summary reader targets instead of matching labels in innerText — note that
+  "cupo disponible" also appears in the marketing copy below with no amount.
+
+  Consistency held on purpose: 2.000.000 − 800.000 = 1.200.000, and
+  TotalDeudaFacturadaPesos matches the statement charges in
+  card-statement-nacional.html.
+-->
+<div class="mis-productos">
+  <p>Transfiere directo a tu cuenta desde el cupo disponible de tus tarjetas de crédito</p>
+
+  <div class="tarjeta-header">
+    <span name="descTarjeta">Mastercard Gold</span>
+    <span name="numTarjeta">**** **** **** 0000</span>
+    <span name="nombreClienteTarjeta">Nombre Apellido Ejemplo</span>
+  </div>
+
+  <div class="cupos">
+    <p>Cupo disponible</p>
+    <p class="monto-destacado"><span name="CupoDisponiblePesos">$ 800.000</span></p>
+    <p>Cupo utilizado</p>
+    <p class="monto-destacado"><span name="DeudaNacional">$ 1.200.000</span></p>
+    <p>Cupo total</p>
+    <p class="monto-destacado"><span name="CupoTotalNacional">$ 2.000.000</span></p>
+  </div>
+
+  <div class="cupos-internacional">
+    <span name="CupoDisponibleDolar">USD 2.000</span>
+    <span name="DeudaInternacional">USD 0</span>
+    <span name="CupoTotalInternacional">USD 2.000</span>
+  </div>
+
+  <div class="facturacion">
+    <span name="FechaInicioPeriodoFacturacion">27/05/2026</span>
+    <span name="FechaFinPeriodoFacturacion">24/06/2026</span>
+    <span name="FechaProximaFacturacion">28/07/2026</span>
+    <span name="TotalDeudaFacturadaPesos">$ 262.000</span>
+    <span name="TotalDeudaFacturadaDolar">USD 0</span>
+    <span name="PagoMinimo">$ 0</span>
+    <!-- Last date to pay this statement. -->
+    <span name="FechaUltimoPago">07/07/2026</span>
+    <!-- When the client actually paid: deliberately a different date, so a reader
+         that confuses the two is caught. -->
+    <span name="fechaUltimoPagoNacional">02/07/2026</span>
+    <span name="valorUltimoPagoNacional">$ 262.000</span>
+  </div>
+</div>
+
+<!-- The resumen page repeats the unbilled table, with an extra Cuotas column. -->
+<table class="table table-movimientos">
+  <thead>
+    <tr>
+      <th>Fecha compra</th>
+      <th>Fecha proceso</th>
+      <th>Descripción</th>
+      <th>Ciudad</th>
+      <th>Cuotas</th>
+      <th>Monto</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>26/07/2026</td>
+      <td>27/07/2026</td>
+      <td>COMERCIO UNO COMPRAS</td>
+      <td>SANTIAGO</td>
+      <td></td>
+      <td>$ 10.000</td>
+    </tr>
+    <tr>
+      <td>24/07/2026</td>
+      <td>24/07/2026</td>
+      <td>ABONO CANJE COMPRA TC</td>
+      <td></td>
+      <td></td>
+      <td>$ -4.000</td>
+    </tr>
+  </tbody>
+</table>
+<a name="nextbtn" href="#">Siguiente</a>

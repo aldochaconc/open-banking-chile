@@ -20,8 +20,8 @@
     "open-banking-chile": "dist/cli.js"
   },
   "scripts": {
-    "build": "tsup",
-    "dev": "tsup --watch",
+    "build": "tsdown",
+    "dev": "tsdown --watch",
     "start": "node dist/cli.js",
     "prepare": "npm run build",
     "test": "vitest run",
@@ -50,18 +50,24 @@
     "url": "https://github.com/kaihv/open-banking-chile.git"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=24"
   },
   "dependencies": {
     "dotenv": "^17.3.1",
     "playwright-core": "^1.59.1",
-    "puppeteer-core": "^24.0.0",
-    "xlsx": "^0.18.5"
+    "puppeteer-core": "^25.3.0",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
+  },
+  "overrides": {
+    "esbuild": "^0.28.1"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "tsup": "^8.5.1",
-    "typescript": "^5.9.3",
-    "vitest": "^3.2.4"
+    "@types/node": "^26.1.1",
+    "tsdown": "^0.22.14",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.10"
+  },
+  "allowScripts": {
+    "esbuild": false
   }
 }

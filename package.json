@@ -25,7 +25,8 @@
     "start": "node dist/cli.js",
     "prepare": "npm run build",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit -p tsconfig.test.json"
   },
   "keywords": [
     "open-banking",

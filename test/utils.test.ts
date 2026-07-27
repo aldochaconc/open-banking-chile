@@ -1,7 +1,7 @@
 import { describe, it, expect, vi } from "vitest";
-import { DebugLog, deduplicateMovements } from "./utils.js";
-import { MOVEMENT_SOURCE } from "./types.js";
-import type { BankMovement } from "./types.js";
+import { DebugLog, deduplicateMovements } from "../src/utils.js";
+import { MOVEMENT_SOURCE } from "../src/types.js";
+import type { BankMovement } from "../src/types.js";
 
 // ─── DebugLog ────────────────────────────────────────────────────
 

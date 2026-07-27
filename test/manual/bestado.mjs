@@ -1,5 +1,5 @@
 import { readFileSync } from "fs";
-import { falabella } from "../dist/index.js";
+import { bestado } from "../../dist/index.js";
 
 const env = Object.fromEntries(
   readFileSync(".env", "utf8").split("\n")
@@ -7,10 +7,9 @@ const env = Object.fromEntries(
     .map(l => { const i = l.indexOf("="); return [l.slice(0, i).trim(), l.slice(i + 1).trim()]; })
 );
 
-const result = await falabella.scrape({
-  rut: env.FALABELLA_RUT,
-  password: env.FALABELLA_PASS,
-  owner: env.FALABELLA_OWNER || "B",
+const result = await bestado.scrape({
+  rut: env.BESTADO_RUT,
+  password: env.BESTADO_PASS,
   headful: process.argv.includes("--headful"),
   saveScreenshots: process.argv.includes("--screenshots"),
 });

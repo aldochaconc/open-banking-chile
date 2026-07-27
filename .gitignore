@@ -6,3 +6,8 @@ screenshots/
 debug/
 .DS_Store
 .claude/
+
+# Pages saved from a bank portal for offline debugging: these hold real account
+# data. Fixtures under test/fixtures/ are synthetic and committed on purpose.
+*.mhtml
+*.mht

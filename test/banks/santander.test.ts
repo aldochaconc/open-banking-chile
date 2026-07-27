@@ -1,11 +1,11 @@
 import { describe, it, expect } from "vitest";
-import { MOVEMENT_SOURCE } from "../types.js";
+import { MOVEMENT_SOURCE } from "../../src/types.js";
 import {
   isSaldoInicial,
   normalizeSantanderCheckingApiMovements,
   normalizeSantanderUnbilledApiMovements,
   normalizeSantanderBilledApiMovements,
-} from "./santander.js";
+} from "../../src/banks/santander.js";
 
 // ─── isSaldoInicial ──────────────────────────────────────────────
 

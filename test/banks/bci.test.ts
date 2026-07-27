@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
-import { MOVEMENT_SOURCE } from "../types.js";
-import { normalizeBciApiMovements } from "./bci.js";
+import { MOVEMENT_SOURCE } from "../../src/types.js";
+import { normalizeBciApiMovements } from "../../src/banks/bci.js";
 
 describe("normalizeBciApiMovements", () => {
   it("returns empty array for empty captures", () => {

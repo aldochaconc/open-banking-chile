@@ -1,5 +1,5 @@
 import { readFileSync } from "fs";
-import { bci } from "../dist/index.js";
+import { itau } from "../../dist/index.js";
 
 const env = Object.fromEntries(
   readFileSync(".env", "utf8").split("\n")
@@ -7,9 +7,9 @@ const env = Object.fromEntries(
     .map(l => { const i = l.indexOf("="); return [l.slice(0, i).trim(), l.slice(i + 1).trim()]; })
 );
 
-const result = await bci.scrape({
-  rut: env.BCI_RUT,
-  password: env.BCI_PASS,
+const result = await itau.scrape({
+  rut: env.ITAU_RUT,
+  password: env.ITAU_PASS,
   headful: process.argv.includes("--headful"),
   saveScreenshots: process.argv.includes("--screenshots"),
 });

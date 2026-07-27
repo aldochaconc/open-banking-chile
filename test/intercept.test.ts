@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from "vitest";
-import { createInterceptor } from "./intercept.js";
+import { createInterceptor } from "../src/intercept.js";
 import type { Page } from "puppeteer-core";
 
 /**
